@@ -63,14 +63,14 @@ def led_on():
 
 def disconnect():
     ser.close()
-
+'''
 def led_off():
     #message = 'L'
     #ser.write(message.encode())
     enable = 0
     a = 'yes'
     print(enable)
-    
+'''    
 
 def my_mainloop():
     print ("sisteum aktip")
@@ -86,39 +86,36 @@ master.after(1000, my_mainloop)
 port_select = tk.StringVar()
 
 
-master.title("SUNDANESE TO MACHINE TRANSLATOR")
-master.geometry('400x200')
+master.title("SUNDANESE TO ROBOT TRANSLATOR")
+master.geometry('410x200')
 
 #port_select = tk.StringVar()
 #send_string = tk.StringVar()
 
 
 label1 = tk.Label(master, text = 'UART PORT : ', font = "BOLD")
-label1.place(x=0, y=0)
+label1.place(x=0, y=30)
 
 form_port = tk.Entry(master, textvariable = port_select)
-form_port.place(x=140, y=5)
+form_port.place(x=100, y=30)
 
-connect_button = tk.Button(master, text='connect', command=connect , width=10, height=1)
-connect_button.place(x=100, y=50)
-disconnect_button = tk.Button(master, text='disconnect', command=disconnect, width=10, height=1)
-disconnect_button.place(x=200, y=50)
-
-
-label2 = tk.Label(master, text = 'REKAM SUARA : ', font = "BOLD")
-label2.place(x=0, y=100)
-
-led_on_button = tk.Button(master, text='HAYANG REKAM', command=led_on, width = 20, height=1)
-led_on_button.place(x = 50, y=150)
-
-led_off_button = tk.Button(master, text='EREUN REKAM', command=led_off, width=20, height=1)
-led_off_button.place (x=200, y = 150)
+connect_button = tk.Button(master, text='konek', command=connect , width=10, height=1)
+connect_button.place(x=100, y=80)
+disconnect_button = tk.Button(master, text='teu konek', command=disconnect, width=10, height=1)
+disconnect_button.place(x=200, y=80)
 
 
+label2 = tk.Label(master, text = 'REKAM SORA : ', font = "BOLD")
+label2.place(x=0, y=120)
+
+led_on_button = tk.Button(master, text='HAYANG REKAM', command=led_on, width = 60, height=1)
+led_on_button.place(x = 0, y=150)
+
+#led_off_button = tk.Button(master, text='EREUN REKAM', command=led_off, width=20, height=1)
+#led_off_button.place (x=200, y = 150)
+
+label2 = tk.Label(master, text = 'nu nyien : muhammadhusni777 ig na husni : husnimuttaqin', font = "BOLD")
+label2.place(x=0, y=0)
 
 
-master.mainloop()
-
-
-
-    
+master.mainloop()    
