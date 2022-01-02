@@ -179,9 +179,14 @@ def timerEvent():
 	global message_time_prev
 	#time = time.addSecs(0.1)
 	message_time = time.time() - message_time_prev
-	if message_time > 1:
+	if message_time > 5:
 		print(time.time())
 		message_time_prev = time.time()
+		
+		with open(filename, 'a') as csvfile:
+				csvwriter = csv.writer(csvfile)
+				rows = [ [str(current_time), str(val_latitude), str(val_longitude),str(knot), str(sensor2)]]
+				csvwriter.writerows(rows)
 
 
 '''
@@ -316,6 +321,10 @@ if __name__ == "__main__":
     
 
 	sys.exit(app.exec_())
+
+
+
+
 
 
 
